@@ -4,6 +4,7 @@ import { RouterProvider } from "react-router/dom";
 import ErrorPage from '../Pages/ErrorPage/ErrorPage';
 import Root from '../Pages/Root/Root';
 import Home from '../Pages/Home/Home'
+import Apps from '../Pages/AllApps/Apps';
 
 export const router = createBrowserRouter([
     {
@@ -16,6 +17,11 @@ export const router = createBrowserRouter([
                 loader: ()=>fetch('/TrendingApps.json'),
                 path: '/',
                 Component: Home
+            },
+            {
+                path:'/Apps',
+                loader: () => fetch('/TrendingApps.json'),
+                Component: Apps
             }
         ]
     }

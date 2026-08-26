@@ -3,10 +3,10 @@ import TrendingAppCards from '../TrendingAppCards/TrendingAppCards';
 
 const TrandingApps = ({loader}) => {
     return (
-        <div className='text-center mt-12'>
-            <h1 className='text-3xl font-bold'>Trending Apps</h1>
+        <div className='text-center mt-20'>
+            <h1 className='text-4xl font-bold my-2'>Trending Apps</h1>
             <small className='text-gray-500'>Explore All Trending Apps on the Market developed by us</small>
-            <div className='grid md:grid-cols-3 grid-cols-2 mx-5 lg:grid-cols-4 gap-4 mt-5 max-w-6xl lg:mx-auto'>
+            <div className='grid md:grid-cols-3 grid-cols-2 mx-5 lg:grid-cols-4 gap-4 mt-6 max-w-6xl lg:mx-auto'>
                 {
                     loader.map(ldr => <TrendingAppCards loaderTrendingApps={ldr}></TrendingAppCards>)
                 }
