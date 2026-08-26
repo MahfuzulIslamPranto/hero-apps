@@ -6,11 +6,12 @@ const TrandingApps = ({loader}) => {
         <div className='text-center mt-12'>
             <h1 className='text-3xl font-bold'>Trending Apps</h1>
             <small className='text-gray-500'>Explore All Trending Apps on the Market developed by us</small>
-            <div className='grid md:grid-cols-3 mx-5 lg:grid-cols-4 gap-2 mt-5 max-w-6xl lg:mx-auto'>
+            <div className='grid md:grid-cols-3 grid-cols-2 mx-5 lg:grid-cols-4 gap-4 mt-5 max-w-6xl lg:mx-auto'>
                 {
                     loader.map(ldr => <TrendingAppCards loaderTrendingApps={ldr}></TrendingAppCards>)
                 }
             </div>
+            <button className='my-10 btn text-white bg-gradient-to-r from-[#632EE3] to-[#9F62F2] px-8'>Show All</button>
         </div>
     );
 };
