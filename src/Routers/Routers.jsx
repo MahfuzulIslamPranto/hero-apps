@@ -1,22 +1,21 @@
 import React from 'react';
 import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
-import ErrorPage from '../Pages/ErrorPage/ErrorPage';
 import Root from '../Pages/Root/Root';
 import Home from '../Pages/Home/Home'
 import Apps from '../Pages/AllApps/Apps';
 import Installed from '../Pages/Installed/Installed';
+import ErrorPage from '../Pages/ErrorPage/ErrorPage';
+import AppNotFound from '../Pages/AppNotFound/AppNotFound';
 
 export const router = createBrowserRouter([
     {
         path:'/',
         Component: Root,
-        element: <ErrorPage></ErrorPage>,
         children:[
             {
                 index: true,
                 loader: ()=>fetch('/TrendingApps.json'),
-                path: '/',
                 Component: Home
             },
             {
@@ -28,6 +27,14 @@ export const router = createBrowserRouter([
                 path:'/Installed',
                 loader: () => fetch('/TrendingApps.json'),
                 Component: Installed
+            },
+            {
+                path:'/*',
+                Component: ErrorPage
+            },
+            {
+                path:'/AppNotFound',
+                Component: AppNotFound
             }
         ]
     }
