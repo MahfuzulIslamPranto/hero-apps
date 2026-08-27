@@ -7,6 +7,7 @@ import Apps from '../Pages/AllApps/Apps';
 import Installed from '../Pages/Installed/Installed';
 import ErrorPage from '../Pages/ErrorPage/ErrorPage';
 import AppNotFound from '../Pages/AppNotFound/AppNotFound';
+import AppDetails from '../Pages/AppDetails/AppDetails';
 
 export const router = createBrowserRouter([
     {
@@ -35,6 +36,11 @@ export const router = createBrowserRouter([
             {
                 path:'/AppNotFound',
                 Component: AppNotFound
+            },
+            {
+                path:'/AppDetails',
+                loader: () => fetch('/TrendingApps.json'),
+                Component: AppDetails
             }
         ]
     }
