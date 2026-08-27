@@ -3,12 +3,15 @@ import demoAppImg from '../../assets/demo-app (2).webp'
 import downloadSign from '../../assets/downloadSign.png'
 import star from '../../assets/Star.png'
 import likeImg from '../../assets/icon-review.png'
+import { BarChart } from 'recharts';
+import {Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';    
 
-const AppDetail = ({loader}) => {
+const AppDetail = ({ldr}) => {
+    const data = [...ldr.ratings].reverse();
     return (
         <div>
             <div className='lg:mx-auto mx-20 max-w-6xl my-12'>
-                <div className='lg:flex gap-10 p-4 border-b-1 border-gray-300'>
+                <div className='lg:flex gap-10 border-b-1 border-gray-300'>
                     <img className='mb-8' src={demoAppImg} alt="" />
                     <div className='lg:flex-1'>
                         <h1 className='text-2xl font-bold'>SmPlan: ToDo List with Reminder</h1>
@@ -33,6 +36,16 @@ const AppDetail = ({loader}) => {
                         <button className='bg-[#00D390] text-white px-4 py-1 rounded mt-12'>Install Now (291 MB)</button>
                     </div>
                 </div>
+            </div>
+            
+            <div className='w-full max-w-6xl h-[350px]'>
+                <BarChart width={800} height={350} layout='vertical' data={data} margin= {{top:20,right:20,left:20,bottom:20}}>
+                    <XAxis type='number' />
+                    <YAxis type='category' dataKey='name' width={80} />
+                    <Tooltip />
+                    <Legend />
+                    <Bar dataKey='count' fill='#FF8811' radius={[0,8,8,0]} />
+                </BarChart>
             </div>
         </div>
     );

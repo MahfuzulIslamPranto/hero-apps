@@ -6,10 +6,9 @@ const AppDetails = () => {
     const loader = useLoaderData();
     return (
         <div>
-            <AppDetail loader = {loader}></AppDetail>
-            {/* {
+            {
                 loader.map(ldr => <AppDetail ldr={ldr} ></AppDetail>)
-            } */}
+            }
         </div>
     );
 };
