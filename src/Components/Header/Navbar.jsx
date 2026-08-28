@@ -1,12 +1,13 @@
 import React from 'react';
 import logo from '../../assets/logo.png'
 import vectorgitlogo from '../../assets/Vector (1).png'
+import { NavLink } from 'react-router';
 
 const Navbar = () => {
     const link = <>
-        <a href="">Home</a>
-        <a href="">Apps</a>
-        <a href="">Installation</a>
+        <NavLink to={'/'}><a href="">Home</a></NavLink>
+        <NavLink to={'/Apps'}><a href="">Apps</a></NavLink>
+        <NavLink to={'/Installed'}><a href="">Installation</a></NavLink>
     </>
     return (
         <div className="navbar bg-base-100 shadow-sm">

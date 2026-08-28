@@ -1,3 +1,4 @@
+//Apps btn's --> top title and called AllApplications.jsx for all apps here
 import React from 'react';
 import { useLoaderData } from 'react-router';
 import AllApplications from '../AllAplications/AllApplications';

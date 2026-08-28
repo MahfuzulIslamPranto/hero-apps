@@ -1,13 +1,11 @@
-import React from 'react';
 import { createBrowserRouter } from "react-router";
-import { RouterProvider } from "react-router/dom";
 import Root from '../Pages/Root/Root';
 import Home from '../Pages/Home/Home'
 import Apps from '../Pages/AllApps/Apps';
 import Installed from '../Pages/Installed/Installed';
 import ErrorPage from '../Pages/ErrorPage/ErrorPage';
 import AppNotFound from '../Pages/AppNotFound/AppNotFound';
-import AppDetails from '../Pages/AppDetails/AppDetails';
+import AppDetail from '../Pages/AppDetail/AppDetail';
 
 export const router = createBrowserRouter([
     {
@@ -38,9 +36,9 @@ export const router = createBrowserRouter([
                 Component: AppNotFound
             },
             {
-                path:'/AppDetails',
+                path:'/Apps/:appId',
                 loader: () => fetch('/TrendingApps.json'),
-                Component: AppDetails
+                Component:AppDetail
             }
         ]
     }
