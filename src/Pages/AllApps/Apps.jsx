@@ -29,7 +29,7 @@ const Apps = () => {
                     <input type="search" required placeholder="Search Apps" />
                 </label>
             </div>
-            <div className='grid md:grid-cols-3 grid-cols-2 mx-5 lg:grid-cols-4 gap-4 mt-5 max-w-6xl lg:mx-auto'>
+            <div className='grid md:grid-cols-3 grid-cols-2 mb-10 mx-5 lg:grid-cols-4 gap-4 mt-5 max-w-6xl lg:mx-auto'>
                 {
                     loader.map(ldr => <AllApplications ldr={ldr}></AllApplications>)
                 }
