@@ -4,10 +4,13 @@ import vectorgitlogo from '../../assets/Vector (1).png'
 import { NavLink } from 'react-router';
 
 const Navbar = () => {
+    const activeNavStyle = ({isActive}) =>{
+        return isActive ? 'text-[#632EE3] border-b-2 font-bold border-[#632EE3]' : 'text-gray-500';
+    }
     const link = <>
-        <NavLink to={'/'}><a href="">Home</a></NavLink>
-        <NavLink to={'/Apps'}><a href="">Apps</a></NavLink>
-        <NavLink to={'/Installed'}><a href="">Installation</a></NavLink>
+        <NavLink className={activeNavStyle} to={'/'}>Home</NavLink>
+        <NavLink className={activeNavStyle} to={'/Apps'}>Apps</NavLink>
+        <NavLink className={activeNavStyle} to={'/Installed'}>Installation</NavLink>
     </>
     return (
         <div className="navbar bg-base-100 shadow-sm">
