@@ -2,6 +2,7 @@ import React from 'react';
 import heroImg from '../../assets/hero.png'
 import playstoreImg from '../../assets/fi_16076057.png'
 import appstoreImg from '../../assets/fi_5977575.png'
+import { Link } from 'react-router';
 const Banner = () => {
     return (
         <div>
@@ -11,14 +12,18 @@ const Banner = () => {
                     <p className='text-gray-500 mt-4'>At HERO.IO , we craft innovative apps designed to make everyday life simpler, smarter, and more exciting.Our goal is to turn your ideas into digital experiences that truly make an impact.</p>
                 </div>
                 <div className=' flex gap-5'>
-                    <button className='flex gap-1 items-center border-gray-300  rounded lg:px-5 px-3 btn bg-white border'>
-                        <img className='w-5 h-5' src={playstoreImg} alt="" />
-                        <p>Google Play</p>
-                    </button>
-                    <button className='flex gap-1 items-center border-gray-300  rounded lg:px-5 px-3 btn bg-white border'>
-                        <img className='w-5 h-5' src={appstoreImg} alt="" />
-                        <p>App Store</p>
-                    </button>
+                    <Link to='https://play.google.com/store/games?hl=en'>
+                        <button className='flex gap-1 items-center border-gray-300  rounded lg:px-5 px-3 btn bg-white border'>
+                            <img className='w-5 h-5' src={playstoreImg} alt="" />
+                            <p>Google Play</p>
+                        </button>
+                    </Link>
+                    <Link to='https://apps.apple.com/us/app/imposter-game-spy-fakeit/id6749012623'>
+                        <button className='flex gap-1 items-center border-gray-300  rounded lg:px-5 px-3 btn bg-white border'>
+                            <img className='w-5 h-5' src={appstoreImg} alt="" />
+                            <p>App Store</p>
+                        </button>
+                    </Link>
                 </div>
                 <div>
                     <img src={heroImg} alt="" />

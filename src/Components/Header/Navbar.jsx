@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../../assets/logo.png'
 import vectorgitlogo from '../../assets/Vector (1).png'
-import { NavLink } from 'react-router';
+import { Link, NavLink } from 'react-router';
 
 const Navbar = () => {
     const activeNavStyle = ({isActive}) =>{
@@ -27,7 +27,9 @@ const Navbar = () => {
                         }
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl"><img className='w-8' src={logo} alt="" /> <span className='bg-gradient-to-r from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent'>HERO.IO</span></a>
+                <Link to='/'>
+                    <a className="btn btn-ghost text-xl"><img className='w-8' src={logo} alt="" /> <span className='bg-gradient-to-r from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent'>HERO.IO</span></a>
+                </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -38,8 +40,11 @@ const Navbar = () => {
                     </div>
                 </ul>
             </div>
+            
             <div className="navbar-end">
-                <a className="btn text-white bg-gradient-to-r from-[#632EE3] to-[#9F62F2]"> <img src={vectorgitlogo} alt="" /> Contribute</a>
+                <Link to='https://github.com/MahfuzulIslamPranto/hero-apps'>
+                    <a className="btn text-white bg-gradient-to-r from-[#632EE3] to-[#9F62F2]"> <img src={vectorgitlogo} alt="" /> Contribute</a>
+                </Link>
             </div>
         </div>
     );
