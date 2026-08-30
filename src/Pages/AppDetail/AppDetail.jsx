@@ -52,8 +52,8 @@ const AppDetail = () => {
                 </div>
             </div>
             
-            <div className='w-full max-w-6xl h-[350px]'>
-                <BarChart width={800} height={350} layout='vertical' data={ratings} margin= {{top:20,right:20,left:20,bottom:20}}>
+            <div className='w-full max-w-6xl mx-auto h-[350px]'>
+                <BarChart width={800} height={350} layout='vertical' data={ratings} margin= {{top:20,right:20,bottom:20}}>
                     <XAxis type='number' />
                     <YAxis type='category' dataKey='name' width={80} />
                     <Tooltip />
