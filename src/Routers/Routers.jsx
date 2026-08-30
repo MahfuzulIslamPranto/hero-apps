@@ -1,11 +1,14 @@
 import { createBrowserRouter } from "react-router";
 import Root from '../Pages/Root/Root';
-import Home from '../Pages/Home/Home'
-import Apps from '../Pages/AllApps/Apps';
-import Installed from '../Pages/Installed/Installed';
-import ErrorPage from '../Pages/ErrorPage/ErrorPage';
-import AppNotFound from '../Pages/AppNotFound/AppNotFound';
-import AppDetail from '../Pages/AppDetail/AppDetail';
+
+import { lazy } from "react";
+
+const Home = lazy(()=>import('../Pages/Home/Home'));
+const Apps = lazy(()=>import('../Pages/AllApps/Apps'));
+const Installed = lazy(()=>import('../Pages/Installed/Installed'));
+const AppDetail = lazy(()=>import('../Pages/AppDetail/AppDetail'));
+const ErrorPage = lazy(() => import('../Pages/ErrorPage/ErrorPage'));
+const AppNotFound = lazy(() => import('../Pages/AppNotFound/AppNotFound'));
 
 export const router = createBrowserRouter([
     {
